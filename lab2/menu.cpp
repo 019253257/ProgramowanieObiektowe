@@ -46,7 +46,7 @@ while(1)
 			wyswietl(tab,x,y);
 			break;
 		case 5:
-			wczytaj();
+			tab=wczytaj(x,y);
 			break;
 
 	}

@@ -50,12 +50,11 @@ double** zmiana_rozmiaru_tablicy(double** tab, size_t &x,size_t &y, size_t newx,
 	return newtab;
 }
 
-double** wczytaj()
+double** wczytaj(size_t &x, size_t &y)
 {
 ifstream plik;
 plik.open("dane.txt");
 if(plik.good()==1){
-size_t x,y;
 plik>>x>>y;
 double** tab = tworzenie_tablicy(x,y);
 for(size_t index_x=0; index_x < x; index_x++)
