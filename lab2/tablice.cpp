@@ -67,3 +67,19 @@ else {
 }
 return NULL;
 } 
+
+void zapisz(size_t x, size_t y, double** tab)
+{
+	ofstream plik;
+	plik.open("wyjscie.txt");
+	if(plik.good()==1){
+	plik<<x<<endl<<y<<endl;
+		for(size_t index_x=0; index_x < x; index_x++){
+			for (size_t index_y=0; index_y < y; index_y++)
+				plik<<tab[index_x][index_y]<<" ";
+			plik<<endl;
+		} 
+	}
+	else 
+		cout<<"Blad pliku wyjscia!"<<endl;
+} 
