@@ -31,13 +31,22 @@ void wyswietl(double** tab, size_t x, size_t y)
 	}		
 }
 
-double* zmiana_rozmiaru_tablicy(double* tab, size_t n, size_t newn)
+double** zmiana_rozmiaru_tablicy(double** tab, size_t &x,size_t &y, size_t newx, size_t newy)
 {
-	size_t tempn = n;
-	if (newn < n) tempn = newn;
-	double* newtab = new double[newn];
-	for (size_t i = 0; i < tempn; i++) newtab[i] = tab[i];
+	double** newtab=tworzenie_tablicy(newx,newy);
+	for(size_t tempx=0; tempx<newx; tempx++)
+	{
+		for(size_t tempy=0; tempy<newy; tempy++){
+			if(tempx>=x || tempy>=y)
+				newtab[tempx][tempy]=0;
+			else
+				newtab[tempx][tempy]=tab[tempx][tempy];	
+			
+		}
+	}
 	delete[] tab;
+	x=newx;
+	y=newy;
 	return newtab;
 }
 
