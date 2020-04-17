@@ -1,13 +1,22 @@
 #include<iostream>
 #include"tablice.h"
 using namespace std;
+
 void menu(){
 size_t x,y;
 double** tab=NULL;
+
 while(1)
 {
 	int licznik;
-	cout<<"1.Stworz tablice"<<endl<<"2.Zmiana rozmiaru tablicy"<<endl<<"3.Wyswietl zawartosc tablicy"<<endl<<"4.Zmien wartosc w tablicy"<<endl<<"5.Wczytaj tablice z pliku"<<endl<<"6.Zapisz tablice do pliku"<<endl<<"0.Zamknij program"<<endl;
+	cout<<"1.Stworz tablice"<<endl
+	<<"2.Zmiana rozmiaru tablicy"<<endl
+	<<"3.Wyswietl zawartosc tablicy"<<endl
+	<<"4.Zmien wartosc w tablicy"<<endl
+	<<"5.Wczytaj tablice z pliku"<<endl
+	<<"6.Zapisz tablice do pliku"<<endl
+	<<"0.Zamknij program"<<endl;
+	
 	cin>>licznik;
 	switch(licznik)
 	{
