@@ -77,7 +77,7 @@ tablica wczytaj(size_t &x, size_t &y)
 	else {
 		cout<<"Blad pliku wejscia!"<<endl;
 	}
-	;
+	
 } 
 
 void zapisz(tablica tab)
