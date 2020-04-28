@@ -1,12 +1,13 @@
 #include<iostream>
 #include<fstream>
+#include "tablice.h"
 using namespace std;
-struct tablica
+/*struct tablica
 {
 double** tab = NULL;
 size_t x = 0;
 size_t y = 0;
-};
+};*/
 tablica tworzenie_tablicy(size_t x, size_t y)
 {
 	tablica tab;
@@ -16,21 +17,18 @@ tablica tworzenie_tablicy(size_t x, size_t y)
 	for (size_t i = 0;i<x;i++){
 		tab.tab[i]=new double [y];
 	}
-	return tab;
-	
+	return tab;	
 }
 
-void zmien_wartosc(tablica tab, double wartosc, size_t index_x, size_t index_y)
+void zmien_wartosc(tablica tab, double wartosc, size_t index_x, size_t index_y, tablica::errors& bledy)
 {
+	bledy = tablica::NO_ERROR;
 	if(index_x<tab.x){
 		if(index_y<tab.y){
 			tab.tab[index_x][index_y] = wartosc;
 		}
 	}
-
-	else{
-		cout<<"Indeks poza zakresem"<<endl;
-	}
+	else bledy = tablica::INDEX_OUT_OF_BOUNDS;
 }
 
 void wyswietl(tablica tab)
@@ -62,11 +60,12 @@ tablica zmiana_rozmiaru_tablicy(tablica tab, size_t newx, size_t newy)
 	return newtab;
 }
 
-tablica wczytaj(size_t &x, size_t &y)
+tablica wczytaj(size_t &x, size_t &y, tablica::errors& bledy)
 {
+	bledy = tablica::NO_ERROR;
 	ifstream plik;
 	plik.open("dane.txt");
-	if(plik.good()==1){
+	if(plik.good()){
 	plik>>x>>y;
 	tablica tab = tworzenie_tablicy(x,y);
 	for(size_t index_x=0; index_x < x; index_x++)
@@ -74,17 +73,20 @@ tablica wczytaj(size_t &x, size_t &y)
 			plik>>tab.tab[index_x][index_y];
 	return tab; 
 	}
-	else {
-		cout<<"Blad pliku wejscia!"<<endl;
+	else
+	{
+	bledy = tablica::INPUT_FILE_ERROR;
+	tablica tab = tworzenie_tablicy(1,1);
+	return tab;
 	}
-	
 } 
 
-void zapisz(tablica tab)
+void zapisz(tablica tab, tablica::errors& bledy)
 {
+	bledy = tablica::NO_ERROR;
 	ofstream plik;
 	plik.open("wyjscie.txt");
-	if(plik.good()==1){
+	if(plik.good()){
 		plik<<tab.x<<endl<<tab.y<<endl;
 			for(size_t index_x=0; index_x < tab.x; index_x++){
 				for (size_t index_y=0; index_y < tab.y; index_y++)
@@ -92,6 +94,9 @@ void zapisz(tablica tab)
 				plik<<endl;
 			} 
 	}
-	else 
-		cout<<"Blad pliku wyjscia!"<<endl;
+	else bledy = tablica::OUTPUT_FILE_ERROR;
 } 
+void suma_w_wierszu(tablica tab)
+{
+
+}

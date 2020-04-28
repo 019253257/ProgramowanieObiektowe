@@ -1,6 +1,17 @@
 #include<iostream>
+#include<cstdlib>
 #include"tablice.h"
 using namespace std;
+
+void wypisz_bledy(tablica::errors& bledy)
+{
+	if (bledy & tablica::INDEX_OUT_OF_BOUNDS)
+		cout << "Indeks poza zakresem" << endl;
+	if (bledy & tablica::INPUT_FILE_ERROR)
+		cout << "Błąd pliku wejścia" << endl;
+	if (bledy & tablica::OUTPUT_FILE_ERROR)
+		cout << "Błąd pliku wyjścia" << endl;
+}
 
 void menu(){
 
@@ -10,20 +21,24 @@ tablica tab;
 while(1)
 {
 	int licznik;
+	tablica::errors e;
 	cout<<"1.Stworz tablice"<<endl
 	<<"2.Zmiana rozmiaru tablicy"<<endl
 	<<"3.Wyswietl zawartosc tablicy"<<endl
 	<<"4.Zmien wartosc w tablicy"<<endl
 	<<"5.Wczytaj tablice z pliku"<<endl
 	<<"6.Zapisz tablice do pliku"<<endl
+	<<"7.Sumuj wedlug"<<endl
 	<<"0.Zamknij program"<<endl;
 	
 	cin>>licznik;
 	switch(licznik)
 	{
 		case 0:
+			system("clear");
 			exit(0);
 		case 1:
+			system("clear");
 			cout<<"Podaj liczbe wierszy"<<endl;
 			cin>>x;
 			cout<<"Podaj liczbe kolumn"<<endl;
@@ -31,6 +46,7 @@ while(1)
 			tab=tworzenie_tablicy(x,y);
 			break;
 		case 2:{
+			system("clear");
 			size_t newx,newy;
 			cout<<"Podaj liczbe wierszy"<<endl;
 			cin>>newx;
@@ -40,6 +56,7 @@ while(1)
 			}
 			break;
 		case 4:{
+			system("clear");
 			size_t newx, newy;
 			double newwart;
 			cout<<"Podaj wiersz: ";
@@ -48,21 +65,39 @@ while(1)
 			cin>>newy;
 			cout<<"Podaj wartosc: ";
 			cin>>newwart;
-			zmien_wartosc(tab,newwart, newx, newy);
-			}
+			zmien_wartosc(tab,newwart, newx, newy, e);
 			break;
+			}
 
-		case 3:		
+		case 3:	
+			system("clear");	
 			wyswietl(tab);
 			break;
 		case 5:
-			tab=wczytaj(x,y);
+			system("clear");
+			tab=wczytaj(x,y,e);
 			break;
 		case 6:
-			zapisz(tab);
+			system("clear");
+			zapisz(tab,e);
+			break;
+		case 7:
+			{
+			system("clear");
+			int licznik;
+			cout<<"1.Sumuj wedlug kolumn"<<endl
+			<<"2.Sumuj wedlug wierszy"<<endl;
+			cin>>licznik;
+			if (licznik == 1);
+			else if (licznik == 2) suma_w_wierszu(tab);
+			else cout<<"Nie ma takiej opcji!"<<endl;
+			}
 			break;
 
 	}
+	if (e != tablica::NO_ERROR)
+				wypisz_bledy(e);
+			
 
 
 
