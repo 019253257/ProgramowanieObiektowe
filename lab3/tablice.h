@@ -60,3 +60,13 @@ void zapisz(tablica tab, tablica::errors& bledy);
 @param tab - struktura na dane
 */
 void suma_w_wierszu(tablica tab);
+
+void suma_w_kolumnie(tablica tab);
+
+void znajdz_max_kolumna(tablica tab);
+
+void znajdz_min_kolumna(tablica tab);
+ 
+void znajdz_max_wiersz(tablica tab);
+ 
+void znajdz_min_wiersz(tablica tab);

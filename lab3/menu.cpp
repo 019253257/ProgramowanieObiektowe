@@ -29,6 +29,7 @@ while(1)
 	<<"5.Wczytaj tablice z pliku"<<endl
 	<<"6.Zapisz tablice do pliku"<<endl
 	<<"7.Sumuj wedlug"<<endl
+	<<"8.Znajdz"<<endl
 	<<"0.Zamknij program"<<endl;
 	
 	cin>>licznik;
@@ -88,12 +89,28 @@ while(1)
 			cout<<"1.Sumuj wedlug kolumn"<<endl
 			<<"2.Sumuj wedlug wierszy"<<endl;
 			cin>>licznik;
-			if (licznik == 1);
+			if (licznik == 1) suma_w_kolumnie(tab);
 			else if (licznik == 2) suma_w_wierszu(tab);
 			else cout<<"Nie ma takiej opcji!"<<endl;
 			}
 			break;
-
+		case 8:
+			{
+			system("clear");
+			int licznik;
+			cout<<"1.Max w kolumnie"<<endl
+			<<"2.Max w wierszu"<<endl
+			<<"3.Min w kolumnie"<<endl
+			<<"4.Min w wierszu"<<endl;
+			cin>>licznik;
+			if (licznik == 1) znajdz_max_kolumna(tab);
+			else if (licznik == 2) znajdz_max_wiersz(tab);
+			else if (licznik == 3) znajdz_min_kolumna(tab);
+			else if (licznik == 4) znajdz_min_wiersz(tab);
+			else cout<<"Nie ma takiej opcji!"<<endl;
+			}
+			break;
+		
 	}
 	if (e != tablica::NO_ERROR)
 				wypisz_bledy(e);
