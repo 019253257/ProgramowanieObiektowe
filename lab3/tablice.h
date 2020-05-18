@@ -61,16 +61,37 @@ void zapisz(tablica tab, tablica::errors& bledy);
 */
 void suma_w_wierszu(tablica tab);
 
+/*
+@param tab - struktura na dane
+*/
 void suma_w_kolumnie(tablica tab);
 
+/*
+@param tab - struktura na dane
+*/
 void znajdz_max_kolumna(tablica tab);
 
+/*
+@param tab - struktura na dane
+*/
 void znajdz_min_kolumna(tablica tab);
  
+/*
+@param tab - struktura na dane
+*/
 void znajdz_max_wiersz(tablica tab);
  
+/*
+@param tab - struktura na dane
+*/
 void znajdz_min_wiersz(tablica tab);
 
+/*
+@param tab - struktura na dane
+*/
 void znajdz_srednia_kolumna(tablica tab);
 
+/*
+@param tab - struktura na dane
+*/
 void znajdz_srednia_wiersz(tablica tab);
