@@ -70,3 +70,7 @@ void znajdz_min_kolumna(tablica tab);
 void znajdz_max_wiersz(tablica tab);
  
 void znajdz_min_wiersz(tablica tab);
+
+void znajdz_srednia_kolumna(tablica tab);
+
+void znajdz_srednia_wiersz(tablica tab);

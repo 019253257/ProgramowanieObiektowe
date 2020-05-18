@@ -168,3 +168,28 @@ void znajdz_min_wiersz(tablica tab)
      }
     cout<<endl;
  }
+ 
+ void znajdz_srednia_kolumna(tablica tab)
+ {
+ 	double suma_temp=0;
+	for (size_t i=0; i<tab.y; i++){
+		for(size_t j=0; j<tab.x;j++){
+            suma_temp+=tab.tab[j][i];
+        }
+        cout<<suma_temp/tab.x<<" | ";
+        suma_temp=0;
+     }
+    cout<<endl;
+ }
+ 
+ void znajdz_srednia_wiersz(tablica tab)
+ {
+     double suma_temp=0;
+	for (size_t i=0; i<tab.x; i++){
+		for(size_t j=0; j<tab.y;j++){
+            suma_temp+=tab.tab[i][j];
+        }
+        cout<<suma_temp/tab.y<<endl;
+        suma_temp=0;
+     }
+ }

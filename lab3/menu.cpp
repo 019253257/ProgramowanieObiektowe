@@ -101,12 +101,16 @@ while(1)
 			cout<<"1.Max w kolumnie"<<endl
 			<<"2.Max w wierszu"<<endl
 			<<"3.Min w kolumnie"<<endl
-			<<"4.Min w wierszu"<<endl;
+			<<"4.Min w wierszu"<<endl
+			<<"5.Srednia w kolumnie"<<endl
+			<<"6.Srednia w wierszu"<<endl;
 			cin>>licznik;
 			if (licznik == 1) znajdz_max_kolumna(tab);
 			else if (licznik == 2) znajdz_max_wiersz(tab);
 			else if (licznik == 3) znajdz_min_kolumna(tab);
 			else if (licznik == 4) znajdz_min_wiersz(tab);
+			else if (licznik == 5) znajdz_srednia_kolumna(tab);
+			else if (licznik == 6) znajdz_srednia_wiersz(tab);
 			else cout<<"Nie ma takiej opcji!"<<endl;
 			}
 			break;
