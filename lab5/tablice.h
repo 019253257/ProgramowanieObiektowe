@@ -109,68 +109,85 @@ tablica(size_t x, size_t y);
 size_t get_x() { return x; }
 size_t get_y() { return y; }
 
-/*
-@param tab - struktura na dane
+/*!
+Ta funkcja ma wyswietlac arkusz
 */
 void wyswietl();
 /*
-@param tab - struktura na dane
+Ta funkcja zmienia wartosc wybranej komorki
 @param wartosc - nowa wprowadzana wartosc
 @param index_x - wiersz w ktorym ma byc wprowadzona wartosc
 @param index_y - kolumna w ktorej ma byc wprowadzona wartosc
 */
 errors zmien_wartosc(T wartosc, size_t index_x, size_t index_y);
 /*
-@param tab - struktura na dane
-@param newx - nowa iloœæ wierszy
-@param newy - nowa iloœæ kolumn
+Ta funkcja zmienia rozmiar arkusza
+@param newx - nowa iloÅ“Ã¦ wierszy
+@param newy - nowa iloÅ“Ã¦ kolumn
 */
 void zmiana_rozmiaru_tablicy(size_t newx, size_t newy);
 /*
-@param x - iloœæ wierszy do aktualizacji
-@param y - iloœæ kolumn do aktualizacji
+Ta funkcja wczytuje arkusz z pliku i zwraca ew. blad
+@param s - nazwa wczytywanego pliku
 */
 errors wczytaj(string s);
 /*
-@param tab - struktura na dane
+Ta funkcja zapisuje arkusz do pliku i zwraca ew. blad
+@param s - nazwa zapisywanego pliku
 */
 errors zapisz(string s);
 /*
-
+Funkcje sluzace wykopiowaniu wiersza/kolumny o zadanym indexie (w/k)
 */
 cell<T>* get_wiersz(size_t w);
 cell<T>* get_kolumna(size_t k);
 
 /*
-@param tab - struktura na dane
+Ta funkcja liczy sume w wierszu
+@param w - numer wiersza
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T suma_w_wierszu(size_t w, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja liczy sume w kolumnie
+@param k - numer kolumny
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T suma_w_kolumnie(size_t k, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja liczy srednia w wierszu
+@param w - numer wiersza
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T znajdz_srednia_wiersz(size_t w, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja liczy srednia w kolumnie
+@param k - numer kolumny
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T znajdz_srednia_kolumna(size_t k, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja znajduje max w kolumnie
+@param k - numer kolumny
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T znajdz_max_kolumna(size_t k, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja znajduje min w kolumnie
+@param k - numer kolumny
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T znajdz_min_kolumna(size_t k, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja znajduje max w wierszu
+@param w - numer wiersza
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T znajdz_max_wiersz(size_t w, errors& e);
 /*
-@param tab - struktura na dane
+Ta funkcja znajduje minimum w wierszu
+@param w - numer wiersza
+@param e - niezbedy do zwrocenia informacji o bledzie
 */
 T znajdz_min_wiersz(size_t w, errors& e);
 
