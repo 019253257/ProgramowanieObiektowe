@@ -5,6 +5,7 @@
 #include <string>
 using namespace std;
 
+//lista mozliwych do utworzenia typow komorek
 enum typy: unsigned int
 {
     typ_int = 1,
@@ -12,6 +13,7 @@ enum typy: unsigned int
     typ_string = 3
 };
 
+//lista mozliwych bledow
 enum bledy: unsigned int
 {
     BEZ_BLEDU = 1,
@@ -24,6 +26,7 @@ enum bledy: unsigned int
     NIEZNANE_POLECENIE = 128
 };
 
+//klasa macierzysta komorka wykorzystywana do tworzenia komorek danego typu
 class Komorka
 {
 public:

@@ -222,7 +222,7 @@ void menu()
         cout << "> ";
         cin >> polecenie;
         cout << endl;
-        //system("clear");
+        system("clear");
         try
         {
             obsluz(tab, polecenie);

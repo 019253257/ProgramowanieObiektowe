@@ -15,6 +15,7 @@ public:
     Komorka** zwroc_wiersz(size_t w) const;
     Komorka& zwroc_komorke(size_t indeks_x, size_t indeks_y);
     
+    //konstruktory i destruktor
     Tablica();
     Tablica(size_t nowy_x, size_t nowy_y, typy* nowe_typy);
     Tablica(const Tablica& t);
